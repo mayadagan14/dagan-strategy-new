@@ -884,6 +884,12 @@ body.contact-page{
     background:
     linear-gradient(180deg, #2f553c 0%, #d7dcda 0%, #b8cec0 0%);
 }
+.about-page p{
+    text-align: right;
+  }
+  .about-page ul{
+    text-align: right;
+  }
 
    .about-page .about-hero{ 
     position: relative;
@@ -895,7 +901,7 @@ body.contact-page{
   .about-page .about-hero-bg{
     position: absolute;
     inset: 0;
-    background: url("images/about.jpg") center/cover no-repeat;
+    background: url("images/about.png") center/cover no-repeat;
     z-index: 0;
   }
   
@@ -948,8 +954,77 @@ body.contact-page{
     font-size: clamp(40px, 4.6vw, 72px);
     font-weight: 900;
     margin: 0 0 16px;
-    color: #f5f7f6;
+    color: var(--primary);
     text-shadow: 0 10px 35px rgba(0,0,0,0.45);
+    text-align: justify;
+  }
+  .about-page .card .about-hero-title{
+    font-size: clamp(40px, 4.6vw, 72px);
+    font-weight: 900;
+    margin: 0 0 16px;
+    color: var(--primary);
+    text-shadow: 0 10px 35px rgba(0,0,0,0.45);
+    text-align: justify;
+  }
+
+/* HERO bullets (About page) */
+.about-page .about-hero-copy{
+    text-align: center; /* כמו בדוגמה */
+  }
+  
+  /* המשפט הראשון */
+  .about-page .about-hero-lead{
+    margin: 12px auto 18px;
+    max-width: 920px;
+  }
+  
+  /* רשימת בולטים */
+  .about-page .about-hero-bullets{
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 22px;
+    max-width: 980px;
+    text-align: right;       /* אבל התוכן בתוך הרשימה לימין */
+  }
+  
+  /* כל שורה */
+  .about-page .about-hero-bullets li{
+    position: relative;
+    padding-right: 34px;     /* מקום לנקודה */
+    margin: 12px 0;
+    line-height: 1.9;
+    font-size: 16px;
+    color: rgba(255,255,255,0.95);
+    text-shadow: 0 8px 22px rgba(0,0,0,0.35);
+  }
+  
+  /* הנקודה הירוקה */
+  .about-page .about-hero-bullets li::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0.9em;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #7fd3bf; /* ירוק מנטה */
+    box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+  }
+  
+  /* במובייל – להקטין קצת */
+  @media (max-width: 900px){
+    .about-page .about-hero-bullets{
+      max-width: 92%;
+    }
+    .about-page .about-hero-bullets li{
+      font-size: 15px;
+      padding-right: 30px;
+    }
+    .about-page .about-hero-bullets li::before{
+      width: 12px;
+      height: 12px;
+    }
   }
   
   .about-page .about-hero-lead,
@@ -960,6 +1035,22 @@ body.contact-page{
     color: rgba(255,255,255,0.92);
     text-shadow: 0 8px 22px rgba(0,0,0,0.35);
   }
+  .about-page .about-title{
+    color: var(--primary);
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+  .about-page .about-subtitle{
+    color: #79c13a;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+   
+
+   
+  }
+
   
   .about-page .about-hero-actions{
     margin-top: 22px;
@@ -967,7 +1058,7 @@ body.contact-page{
     gap: 12px;
     flex-wrap: wrap;
   }
-  
+
   /* רספונסיבי */
   @media (max-width: 900px){
     .about-page .about-hero-inner{
@@ -1934,6 +2025,4 @@ body.service-consulting{
       border-radius: 50%;
     }
   }
-  
-
-  
+ 
