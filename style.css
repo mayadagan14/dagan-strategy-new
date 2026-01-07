@@ -454,11 +454,6 @@
     filter: brightness(1.35);
   }
   
-  
-  /* ================= Yoav plan ================= */
-  .yoav-plan{ padding: 18px 0 10px; }
-  .yoav-plan-text{ text-align: center; }
-  
   /* ================= Sections ================= */
  /* ===== Contact page: bigger + nicer ===== */
 .section{
@@ -1938,4 +1933,5 @@ body.service-consulting{
     }
   }
   
+
   
