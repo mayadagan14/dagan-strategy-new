@@ -2127,14 +2127,21 @@ body.service-consulting{
   
     /* ===== SPLIT ===== */
     .split{
-      grid-template-columns: 1fr !important;
-      width: min(520px, 100%);      /* ⬅️ זה מה שממרכז באמת */
-      margin-inline: auto !important;
-      justify-content: center;
-    }
-  
-    /* אם את מסתירה תמונה, שלא יהיה מקום ריק */
-    .split-media{ display: none !important; }
+        grid-template-columns: 1fr !important;
+        justify-content: center;
+      }
+    
+      /* הסתרת התמונה (כמו שכבר עשית) */
+      .split-media{
+        display: none !important;
+      }
+    
+      /* ⬅️ זה העיקר */
+      .split-content{
+        width: min(520px, 100%);   /* רוחב נוח ולא מלא מסך */
+        margin-inline: auto;       /* מרכז את הבלוק */
+        text-align: right;         /* עברית נשארת נכון */
+      }
   
     /* ===== FIT GRID ===== */
     .fit-grid{
