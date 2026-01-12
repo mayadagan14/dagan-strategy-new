@@ -706,20 +706,20 @@
     .services-grid{ grid-template-columns: 1fr; }
   }
   /* ✅ הסתרת תמונת ה-split במובייל (ניצחון מוחלט) */
-@media (max-width: 900px){
-    .split-media,
-    .split-media img{
-      display: none !important;
+  @media (max-width: 900px){
+    .split-media{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
     }
   
-    /* אם במקרה זו תמונת רקע על הבלוק */
-    .split-media{
-      background: none !important;
-      height: 0 !important;
-      margin: 0 !important;
-      padding: 0 !important;
+    .split-media img{
+      width: 160px;
+      height: 160px;
+      border-radius: 16px;
     }
   }
+  
   
   /* ===== Elegant hover dropdown ===== */
   .nav-dropdown{ position: relative; }
