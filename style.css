@@ -352,29 +352,29 @@
   
   /* רספונסיבי */
   @media (max-width: 900px){
+
+    /* מרכז את כל הבלוק של הגריד בתוך העמוד */
     .fit-grid{
-      grid-template-columns: 1fr;
-      justify-items: center;   /* ⬅️ מרכז כל פריט */
+      display: grid;
+      grid-template-columns: 1fr !important;
+  
+      width: min(520px, 100%);   /* ⬅️ זה הקטע הקריטי */
+      margin-inline: auto;       /* ⬅️ מרכז */
+      justify-content: center;   /* מרכז את המסילה */
+      justify-items: stretch;    /* שהכרטיס יתמלא בתוך הרוחב המצומצם */
     }
   
+    /* כל item יהיה 100% מהרוחב של fit-grid המצומצם */
     .fit-item{
-      grid-template-columns: 1fr 96px;
-      max-width: 420px;        /* ⬅️ לא יתפרס על כל המסך */
       width: 100%;
-      margin: 0 auto;          /* ⬅️ מרכז גם ברמה של בלוק */
+      margin: 0;
+      grid-template-columns: 1fr 96px;
     }
   
-    .fit-card{
-      min-height: 140px;
-      text-align: right;       /* עברית נשארת נכון */
-    }
-  
-    .fit-img{
-      width: 96px;
-      height: 70px;
-      justify-self: center;    /* ⬅️ אם צריך גם את התמונה במרכז */
-    }
+    .fit-card{ min-height: 140px; }
+    .fit-img{ width: 96px; height: 70px; }
   }
+  
   
  
   
