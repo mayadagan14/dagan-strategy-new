@@ -2116,42 +2116,44 @@ body.service-consulting{
     }
   }
   /* ✅ הסתרת תמונת ה-split במובייל (ניצחון מוחלט) */
-@media (max-width: 900px){
-    .split-media,
-    .split-media img{
-      display: none !important;
+  @media (max-width: 900px){
+
+    /* לוודא שהקונטיינר באמת באמצע ולא “דוחף” לימין */
+    .container{
+      width: min(1100px, 100%);
+      margin-inline: auto;
+      padding-inline: 16px; /* אם אין לך – מוסיף ריווח נעים */
     }
   
-    /* אם במקרה זו תמונת רקע על הבלוק */
-    .split-media{
-      background: none !important;
-      height: 0 !important;
-      margin: 0 !important;
-      padding: 0 !important;
+    /* ===== SPLIT ===== */
+    .split{
+      grid-template-columns: 1fr !important;
+      width: min(520px, 100%);      /* ⬅️ זה מה שממרכז באמת */
+      margin-inline: auto !important;
+      justify-content: center;
     }
-  }
-  @media (max-width: 900px){
+  
+    /* אם את מסתירה תמונה, שלא יהיה מקום ריק */
+    .split-media{ display: none !important; }
+  
+    /* ===== FIT GRID ===== */
     .fit-grid{
-      grid-template-columns: 1fr;
-      justify-items: center;   /* ⬅️ מרכז כל פריט */
+      grid-template-columns: 1fr !important;
+      width: min(520px, 100%);      /* ⬅️ גם פה */
+      margin-inline: auto !important;
+      justify-content: center;
+      justify-items: stretch;       /* הכרטיס ימלא את הרוחב המצומצם */
+      text-align: initial;          /* שלא יושפע ממרכוז טקסט של container */
     }
   
     .fit-item{
-      grid-template-columns: 1fr 96px;
-      max-width: 420px;        /* ⬅️ לא יתפרס על כל המסך */
       width: 100%;
-      margin: 0 auto;          /* ⬅️ מרכז גם ברמה של בלוק */
+      margin: 0 !important;
+      justify-self: stretch;
     }
   
     .fit-card{
-      min-height: 140px;
-      text-align: right;       /* עברית נשארת נכון */
-    }
-  
-    .fit-img{
-      width: 96px;
-      height: 70px;
-      justify-self: center;    /* ⬅️ אם צריך גם את התמונה במרכז */
+      width: 100%;
     }
   }
-    
+  
