@@ -578,15 +578,15 @@
     border: 6px solid rgba(255,255,255,0.6);
   }
   /* התאמה למובייל */
+/* התאמה למובייל – הסתרת התמונה */
 @media (max-width: 900px){
     .split{
       grid-template-columns: 1fr;
       text-align: center;
     }
   
-    .split-media img{
-      width: 220px;
-      height: 220px;
+    .split-media{
+      display: none;   /* ❗ מסתיר לגמרי את התמונה */
     }
   }
   
