@@ -723,39 +723,16 @@
   /* ✅ הסתרת תמונת ה-split במובייל (ניצחון מוחלט) */
 /* התאמה למובייל – הסתרת התמונה */
 @media (max-width: 900px){
-    .split{
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-  
-    .split-media{
-      display: none;   /* ❗ מסתיר לגמרי את התמונה */
-    }
+  .split{
+    grid-template-columns: 1fr;
+    text-align: center;
   }
-  @media (max-width: 900px){
 
-    /* מרכז את כל הבלוק של הגריד בתוך העמוד */
-    .fit-grid{
-      display: grid;
-      grid-template-columns: 1fr !important;
-  
-      width: min(520px, 100%);   /* ⬅️ זה הקטע הקריטי */
-      margin-inline: auto;       /* ⬅️ מרכז */
-      justify-content: center;   /* מרכז את המסילה */
-      justify-items: stretch;    /* שהכרטיס יתמלא בתוך הרוחב המצומצם */
-    }
-  
-    /* כל item יהיה 100% מהרוחב של fit-grid המצומצם */
-    .fit-item{
-      width: 100%;
-      margin: 0;
-      grid-template-columns: 1fr 96px;
-    }
-  
-    .fit-card{ min-height: 140px; }
-    .fit-img{ width: 96px; height: 70px; }
+  .split-media{
+    display: none;   /* ❗ מסתיר לגמרי את התמונה */
   }
-      
+}
+  
   /* ===== Elegant hover dropdown ===== */
   .nav-dropdown{ position: relative; }
 
@@ -2138,31 +2115,43 @@ body.service-consulting{
       width: min(340px, 90vw) !important;
     }
   }
-  @media (max-width: 900px){
-
-    .container.split{
-      grid-template-columns: 1fr;
-      gap: 28px;
-    }
-  
-    /* התמונה קודם */
-    .split-media{
-      order: 1;
-      display: flex;
-      justify-content: center;
-    }
-  
-    /* המלל מתחת */
-    .split-text{
-      order: 2;
-      text-align: center;
-    }
-  
+  /* ✅ הסתרת תמונת ה-split במובייל (ניצחון מוחלט) */
+@media (max-width: 900px){
+    .split-media,
     .split-media img{
-      width: 240px;
-      height: 240px;
-      object-fit: cover;
-      border-radius: 50%;
+      display: none !important;
+    }
+  
+    /* אם במקרה זו תמונת רקע על הבלוק */
+    .split-media{
+      background: none !important;
+      height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
   }
- 
+  @media (max-width: 900px){
+    .fit-grid{
+      grid-template-columns: 1fr;
+      justify-items: center;   /* ⬅️ מרכז כל פריט */
+    }
+  
+    .fit-item{
+      grid-template-columns: 1fr 96px;
+      max-width: 420px;        /* ⬅️ לא יתפרס על כל המסך */
+      width: 100%;
+      margin: 0 auto;          /* ⬅️ מרכז גם ברמה של בלוק */
+    }
+  
+    .fit-card{
+      min-height: 140px;
+      text-align: right;       /* עברית נשארת נכון */
+    }
+  
+    .fit-img{
+      width: 96px;
+      height: 70px;
+      justify-self: center;    /* ⬅️ אם צריך גם את התמונה במרכז */
+    }
+  }
+    
