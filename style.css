@@ -961,29 +961,34 @@ body.contact-page{
     }
   }
   
-  /* =========================
-   ABOUT HERO (like screenshot)
-   ========================= */
-   /* רקע אחיד לעמוד אודות בלבד */
+ 
 
-  /* מבטל אפורים מתחלפים רק בעמוד אודות */
-.about-page .section,
-.about-page main,
-.about-page {
-    background:
-    linear-gradient(180deg, #2f553c 0%, #d7dcda 0%, #b8cec0 0%);
-}
-.about-page p{
-    text-align: right;
+
+/* ===============================
+   ABOUT PAGE 
+================================ */
+
+.about-page .section{
+    padding-block: 34px !important;
   }
+  
+  .about-page,
+  .about-page main{
+    background: linear-gradient(180deg, #2f553c 0%, #d7dcda 0%, #b8cec0 0%);
+  }
+  
+  .about-page p,
   .about-page ul{
     text-align: right;
   }
-
-   .about-page .about-hero{ 
+  
+  /* ===============================
+     HERO
+  ================================ */
+  
+  .about-page .about-hero{
     position: relative;
     min-height: 78vh;
-   
   }
   
   /* רקע */
@@ -1006,22 +1011,18 @@ body.contact-page{
   .about-page .about-hero-inner{
     position: relative;
     z-index: 2;
-    padding-right: 520px; /* מקום לתמונה */
+    padding-right: 520px;
     padding-top: 60px;
     padding-bottom: 60px;
   }
   
-  /* ✅ תמונת יואב - עכשיו absolute ביחס ל-hero עצמו */
-
-  
-.about-page .about-hero-photo{
+  /* תמונה */
+  .about-page .about-hero-photo{
     position: absolute !important;
     right: 6% !important;
     bottom: 0 !important;
-  
-    width: 400px;; /* ⬅️ זה מה שמגדיל */
+    width: 400px;
     max-width: none !important;
-  
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -1030,7 +1031,6 @@ body.contact-page{
     width: 100% !important;
     max-width: none !important;
     height: auto !important;
-  
     background: transparent !important;
     border: 0 !important;
     border-radius: 0 !important;
@@ -1038,6 +1038,7 @@ body.contact-page{
     filter: drop-shadow(0 22px 50px rgba(0,0,0,0.45)) !important;
     display: block !important;
   }
+  
   /* טקסט */
   .about-page .about-hero-title{
     font-size: clamp(40px, 4.6vw, 72px);
@@ -1047,73 +1048,14 @@ body.contact-page{
     text-shadow: 0 10px 35px rgba(0,0,0,0.45);
     text-align: justify;
   }
-  .about-page .card .about-hero-title{
-    font-size: clamp(40px, 4.6vw, 72px);
-    font-weight: 900;
-    margin: 0 0 16px;
-    color: var(--primary);
-    text-shadow: 0 10px 35px rgba(0,0,0,0.45);
-    text-align: justify;
-  }
-
-/* HERO bullets (About page) */
-.about-page .about-hero-copy{
-    text-align: center; /* כמו בדוגמה */
+  
+  .about-page .about-hero-copy{
+    text-align: center;
   }
   
-  /* המשפט הראשון */
   .about-page .about-hero-lead{
     margin: 12px auto 18px;
     max-width: 920px;
-  }
-  
-  /* רשימת בולטים */
-  .about-page .about-hero-bullets{
-    list-style: none;
-    padding: 0;
-    margin: 0 auto 22px;
-    max-width: 980px;
-    text-align: right;       /* אבל התוכן בתוך הרשימה לימין */
-  }
-  
-  /* כל שורה */
-  .about-page .about-hero-bullets li{
-    position: relative;
-    padding-right: 34px;     /* מקום לנקודה */
-    margin: 12px 0;
-    line-height: 1.9;
-    font-size: 16px;
-    color: rgba(255,255,255,0.95);
-    text-shadow: 0 8px 22px rgba(0,0,0,0.35);
-  }
-  
-  /* הנקודה הירוקה */
-  .about-page .about-hero-bullets li::before{
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0.9em;
-    transform: translateY(-50%);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #7fd3bf; /* ירוק מנטה */
-    box-shadow: 0 10px 26px rgba(0,0,0,0.22);
-  }
-  
-  /* במובייל – להקטין קצת */
-  @media (max-width: 900px){
-    .about-page .about-hero-bullets{
-      max-width: 92%;
-    }
-    .about-page .about-hero-bullets li{
-      font-size: 15px;
-      padding-right: 30px;
-    }
-    .about-page .about-hero-bullets li::before{
-      width: 12px;
-      height: 12px;
-    }
   }
   
   .about-page .about-hero-lead,
@@ -1124,64 +1066,130 @@ body.contact-page{
     color: rgba(255,255,255,0.92);
     text-shadow: 0 8px 22px rgba(0,0,0,0.35);
   }
+  
+  /* HERO bullets */
+  .about-page .about-hero-bullets{
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 22px;
+    max-width: 980px;
+    text-align: right;
+  }
+  
+  .about-page .about-hero-bullets li{
+    position: relative;
+    padding-right: 34px;
+    margin: 12px 0;
+    line-height: 1.9;
+    font-size: 16px;
+    color: rgba(255,255,255,0.95);
+    text-shadow: 0 8px 22px rgba(0,0,0,0.35);
+  }
+  
+  .about-page .about-hero-bullets li::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0.9em;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #7fd3bf;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+  }
+  
+  /* ===============================
+     CARDS – FIX WHITE BOX HEIGHT
+  ================================ */
+  
+  .about-page .card{
+    overflow: hidden; /* ✅ מונע margin-collapsing שיוצר "אוויר" */
+    margin-bottom: 35px;
+  }
+  
+  
+  /* פסקאות */
+  .about-page .card p{
+    margin: 0 0 12px;
+    color: var(--text);
+    text-align: right;
+  }
+
+  
+  /* ✅ האלמנט האחרון בכרטיס לא ישאיר מרווח */
+  .about-page .card > *:last-child{
+    margin-bottom: 25px !important;
+  }
+  
+  /* כותרות */
   .about-page .about-title{
     color: var(--primary);
     font-size: 50px;
     font-weight: 900;
-    margin-bottom: 10px;
+    margin: 0 0 14px;
   }
+  
   .about-page .about-subtitle{
     color: #79c13a;
     font-size: 30px;
     font-weight: 700;
-    margin-bottom: 10px;
-   
-
-   
+    margin: 0 0 14px;
   }
-
   
+  /* כפתורים */
   .about-page .about-hero-actions{
     margin-top: 22px;
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
   }
-
-  /* רספונסיבי */
+  
+  /* ===============================
+     RESPONSIVE
+  ================================ */
+  
   @media (max-width: 900px){
     .about-page .about-hero-inner{
       padding-right: 0;
       text-align: center;
     }
+  
     .about-page .about-hero-actions{
       justify-content: center;
     }
+  
     .about-page .about-hero-photo{
-        position: absolute !important;
-        right: 6% !important;
-        bottom: 0 !important;
-      
-        width: 1000px; /* ⬅️ זה מה שמגדיל */
-        max-width: none !important;
-      
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-      
-      .about-page .about-hero-photo img{
-        width: 100% !important;
-        max-width: none !important;
-        height: auto !important;
-      
-        background: transparent !important;
-        border: 0 !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        filter: drop-shadow(0 22px 50px rgba(0,0,0,0.45)) !important;
-        display: block !important;
-      }
-}
+      position: absolute !important;
+      right: 6% !important;
+      bottom: 0 !important;
+      width: 1000px;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  
+    .about-page .about-hero-photo img{
+      width: 100% !important;
+      max-width: none !important;
+      height: auto !important;
+    }
+  
+    .about-page .about-hero-bullets{
+      max-width: 92%;
+    }
+  
+    .about-page .about-hero-bullets li{
+      font-size: 15px;
+      padding-right: 30px;
+    }
+  
+    .about-page .about-hero-bullets li::before{
+      width: 12px;
+      height: 12px;
+    }
+  }
+  
 
 
 
