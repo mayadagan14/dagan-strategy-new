@@ -2140,7 +2140,7 @@ body.service-consulting{
       .split-content{
         width: min(520px, 100%);   /* רוחב נוח ולא מלא מסך */
         margin-inline: auto;       /* מרכז את הבלוק */
-        text-align: right;         /* עברית נשארת נכון */
+        text-align: center;         /* עברית נשארת נכון */
       }
   
     /* ===== FIT GRID ===== */
@@ -2164,3 +2164,4 @@ body.service-consulting{
     }
   }
   
+
