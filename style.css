@@ -354,19 +354,28 @@
   @media (max-width: 900px){
     .fit-grid{
       grid-template-columns: 1fr;
+      justify-items: center;   /* ⬅️ מרכז כל פריט */
     }
+  
     .fit-item{
       grid-template-columns: 1fr 96px;
+      max-width: 420px;        /* ⬅️ לא יתפרס על כל המסך */
+      width: 100%;
+      margin: 0 auto;          /* ⬅️ מרכז גם ברמה של בלוק */
     }
+  
+    .fit-card{
+      min-height: 140px;
+      text-align: right;       /* עברית נשארת נכון */
+    }
+  
     .fit-img{
       width: 96px;
       height: 70px;
+      justify-self: center;    /* ⬅️ אם צריך גם את התמונה במרכז */
     }
-    .fit-card{
-        min-height: 140px;
-      }
   }
- 
+  
  
   
   /* ================= Services preview ================= */
@@ -706,20 +715,20 @@
     .services-grid{ grid-template-columns: 1fr; }
   }
   /* ✅ הסתרת תמונת ה-split במובייל (ניצחון מוחלט) */
-  @media (max-width: 900px){
-    .split-media{
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-  
-    .split-media img{
-      width: 160px;
-      height: 160px;
-      border-radius: 16px;
-    }
+@media (max-width: 900px){
+  .split-media{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
   }
-  
+
+  .split-media img{
+    width: 160px;
+    height: 160px;
+    border-radius: 16px;
+  }
+}
+
   
   /* ===== Elegant hover dropdown ===== */
   .nav-dropdown{ position: relative; }
