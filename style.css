@@ -2561,3 +2561,47 @@ main.realestate-page{
   .retainer-page .checks{
     align-items: start;
   }
+/* ===== Mobile nav dropdown ===== */
+.mobile-nav .mnav-acc{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: none;
+  border: 0;
+  padding: 12px 14px;
+  font: inherit;
+  font-weight: 800;
+  color: inherit;
+  cursor: pointer;
+  text-align: right;
+}
+
+.mobile-nav .mnav-caret{
+  transition: transform .2s ease;
+  font-weight: 900;
+}
+
+.mobile-nav .mnav-acc[aria-expanded="true"] .mnav-caret{
+  transform: rotate(180deg);
+}
+
+.mobile-nav .mnav-sub{
+  padding: 4px 0 10px;
+  margin: 0 10px 8px;
+  border-right: 2px solid rgba(56,107,72,.25);
+}
+
+.mobile-nav .mnav-sub a{
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  color: rgba(15,23,42,.85);
+}
+
+.mobile-nav .mnav-sub a:hover{
+  background: rgba(56,107,72,.08);
+}
+
