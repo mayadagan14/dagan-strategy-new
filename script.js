@@ -344,4 +344,18 @@ Action Items ברורים ומוגדרים: </strong>
       msg.className = "form-msg ok";
     });
   });
+// Mobile Services dropdown
+(() => {
+  const btn = document.getElementById("mobileServicesBtn");
+  const sub = document.getElementById("mobileServicesSub");
+  if (!btn || !sub) return;
+
+  btn.addEventListener("click", () => {
+    const isOpen = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!isOpen));
+    sub.hidden = isOpen;
+  });
+})();
+
   
+
